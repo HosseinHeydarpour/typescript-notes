@@ -35,3 +35,16 @@ isFunny = true;
 // thing = false;
 // thing();
 // thing.toUpperCase();
+
+const movies = ["Arrival", "The thing", "Aliens"];
+
+// let foundMovie; // It is in type of any if we do not pass a value
+let foundMovie: string; // It is in type of any if we do not pass a value
+
+movies.forEach((mov) => {
+  if (mov === "Arrival") {
+    foundMovie = "Arrival";
+  }
+});
+
+// foundMovie(); // has error
