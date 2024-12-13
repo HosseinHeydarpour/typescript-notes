@@ -21,3 +21,17 @@ tvShow = "Lorem Ipsum";
 let isFunny = false;
 isFunny = true;
 // isFunny = 'vdsv';  // This has error
+
+// The Any type
+
+// let thing: any = "Hello";
+// thing = 1;
+// thing = false;
+// thing();
+// thing.toUpperCase();
+
+// let thing = "Hello";
+// thing = 1;
+// thing = false;
+// thing();
+// thing.toUpperCase();
