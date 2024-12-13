@@ -11,3 +11,13 @@ numcatLives += 1;
 let gameOver: boolean = false;
 gameOver = true;
 // gameOver = "False";
+
+// Type inference
+
+let tvShow = "Lorem"; // Type script inders this as string
+tvShow = "Lorem Ipsum";
+// tvShow = false;  // This has error
+
+let isFunny = false;
+isFunny = true;
+// isFunny = 'vdsv';  // This has error
