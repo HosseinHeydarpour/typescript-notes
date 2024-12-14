@@ -78,3 +78,20 @@ function printTwice(msg: string): void {
 
   // return ''; This will have error
 }
+
+// ******************************************
+// * 009 The Never Type
+// ******************************************
+function makeError(msg: string): never {
+  throw new Error(msg);
+}
+
+function gameLoop(): never {
+  while (true) {
+    console.log("Game loop running");
+  }
+
+  // return true; it gives us true
+}
+
+// ! Void returns Undefined!
