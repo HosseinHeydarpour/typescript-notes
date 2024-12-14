@@ -53,3 +53,17 @@ function random(num: number): number | string {
 const add = (x: number, y: number): number => {
   return x + y;
 };
+
+// ******************************************
+// * 006 Anonymous Function Contextual Typing
+// ******************************************
+const colors = ["red", "orange", "yellow"];
+colors.map((color) => {
+  return color.toUpperCase();
+  // return color.toFixed(); This has error because TS know colo is string and to fixed will not work on it
+});
+
+// When you do not specify the type function expects any type
+// function blah(color){
+
+// }
