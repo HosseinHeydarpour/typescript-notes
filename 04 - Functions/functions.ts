@@ -13,6 +13,12 @@ function greet(person: string) {
   return console.log(`Hi ${person}`);
 }
 
+const doSomething = (person: string, age: number, isFunny: boolean) => {};
+
+doSomething("Abba", 23, true);
+// doSomething("Abba", 23, 23232); This has error
+// doSomething("Abba", 23); 1 parameter is missing
+
 greet("John");
 // greet(2);
 // greet(true);
