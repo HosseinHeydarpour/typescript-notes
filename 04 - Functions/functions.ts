@@ -67,3 +67,14 @@ colors.map((color) => {
 // function blah(color){
 
 // }
+
+// ******************************************
+// * 007 The Void Type
+// ******************************************
+
+function printTwice(msg: string): void {
+  console.log(msg);
+  console.log(msg);
+
+  // return ''; This will have error
+}
