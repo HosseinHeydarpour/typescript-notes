@@ -22,3 +22,15 @@ function randomCoordinate(): { x: number; y: number } {
     y: Math.random(),
   };
 }
+
+// ******************************
+// * 002 More Object Types
+// ******************************
+
+// Has error because age is not available in function def
+// printName({ first: "Mick", last: "Jagger", age: 234 });
+
+// This does not have any error unlike the line above
+// so if you pass the extra stuff with object literal there will be error
+const mick = { first: "Mick", last: "Jagger", age: 234, isAlive: true };
+printName(mick);
