@@ -95,3 +95,20 @@ function gameLoop(): never {
 }
 
 // ! Void returns Undefined!
+
+// ******************************************
+// * 010 Function Types EXERCISE
+// ******************************************
+
+const twoFer = function (person: string = "you"): string {
+  return `one for ${person}, one for me`;
+};
+console.log(twoFer);
+console.log(twoFer("elvis"));
+
+const isLeapYear = function (year: number): boolean {
+  return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+};
+
+console.log(isLeapYear(2012));
+console.log(isLeapYear(2013));
