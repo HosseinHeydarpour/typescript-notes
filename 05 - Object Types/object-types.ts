@@ -66,3 +66,39 @@ function doublePoint(point: Point): Point {
 // This is not very popular
 type myNum = number;
 let age: myNum = 1234;
+
+// ******************************
+// * 006 Nested Objects
+// ******************************
+
+type Song = {
+  title: string;
+  artist: string;
+  numStreams: number;
+  credits: {
+    producer: string;
+    writer: string;
+  };
+};
+
+function calcPayout(song: Song): number {
+  return 0.0033 * song.numStreams;
+}
+
+function printSong(song: Song) {
+  console.log(`${song.title} - ${song.artist}`);
+}
+
+const mySong: Song = {
+  title: "Thimking out",
+  artist: "Ed sheeran",
+  numStreams: 1231321651,
+  credits: {
+    producer: "Ed sheeran",
+    writer: "Ed sheeran",
+  },
+};
+
+const eranings = calcPayout(mySong);
+console.log(eranings);
+printSong(mySong);
