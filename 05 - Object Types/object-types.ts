@@ -115,3 +115,20 @@ type Point = {
 
 const myPoint: Point = { x: 1, y: 3, z: 9 };
 
+// ******************************
+// * 008 The readonly Modifier
+// ******************************
+
+// modifier
+type User = {
+  readonly id: number;
+  username: string;
+};
+
+const user: User = {
+  id: 234,
+  username: "cat",
+};
+
+console.log(user.id);
+// user.id = 232313; This has error because it is readonly
