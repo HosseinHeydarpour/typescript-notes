@@ -39,10 +39,10 @@ printName(mick);
 // * 005 Creating Type Aliases
 // ******************************
 
-type Point = {
-  x: number;
-  y: number;
-};
+// type Point = {
+//   x: number;
+//   y: number;
+// };
 
 let coordinate: Point = { x: 22, y: 2 };
 
@@ -102,3 +102,16 @@ const mySong: Song = {
 const eranings = calcPayout(mySong);
 console.log(eranings);
 printSong(mySong);
+
+// ******************************
+// * 007 Optional Properties
+// ******************************
+type Point = {
+  x: number;
+  y: number;
+  z?: number; // Optional
+  // z: number;
+};
+
+const myPoint: Point = { x: 1, y: 3, z: 9 };
+
