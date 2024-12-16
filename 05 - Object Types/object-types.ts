@@ -132,3 +132,41 @@ const user: User = {
 
 console.log(user.id);
 // user.id = 232313; This has error because it is readonly
+
+// ******************************
+// * 009 Intersection Types
+// ******************************
+type Circle = {
+  radius: number;
+};
+
+type Colorful = {
+  color: string;
+};
+
+type ColorfulCircle = Colorful & Circle;
+
+const happyFace: ColorfulCircle = {
+  color: "Yellow",
+  radius: 4,
+};
+
+type Cat = {
+  numLives: number;
+};
+
+type Dog = {
+  breed: string;
+};
+
+// Add additional properties
+type CatDog = Cat &
+  Dog & {
+    age: number;
+  };
+
+const christy: CatDog = {
+  numLives: 7,
+  breed: "Husky",
+  age: 9,
+};
