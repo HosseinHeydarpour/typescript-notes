@@ -27,3 +27,15 @@ coords.push({
   y: 6,
 });
 
+// **************************
+// * 003 Multidimensional Arrays
+// **************************
+
+const board: string[][] = [
+  // Two dimensional
+  ["X", "O", "X"],
+  ["X", "O", "X"],
+  ["X", "O", "X"],
+];
+
+const demo: number[][][] = [[[1]]]; // Three dimensional
