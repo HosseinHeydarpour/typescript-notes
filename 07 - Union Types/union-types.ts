@@ -27,3 +27,23 @@ coordinates = {
   lat: 312.222,
   long: 2341.22,
 };
+
+// ***********************************
+// * 002 Type Narrowing w Union Types
+// ***********************************
+function printAge(age: number | string): void {
+  console.log(`You are ${age} years old`);
+}
+printAge(23);
+printAge("73");
+
+function calculateTax(price: number | string, tax: number): number {
+  // price.replace("$", ""); This has error too
+  // return price * tax; this has error
+  // the solution is type narrowing
+  if (typeof price === "string") {
+    price = price.replace("$", "");
+    return parseFloat(price) * tax;
+  }
+  return price * tax;
+}
