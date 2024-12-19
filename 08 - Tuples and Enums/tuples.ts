@@ -24,3 +24,35 @@ const responses: HTTPResponse[] = [
   [400, "hELLO"],
   [404, "HIT THE ROAD"],
 ];
+
+// ******************************
+// * 005 Introducing Enums
+// ******************************
+// UP;
+// DOWN;
+// LEFT;
+// RIGHT;
+
+// const PENDING = 0;
+// const SHIPPED = 1;
+// const DELIVERED = 2;
+
+// if (status === DELIVERED) {
+//   console.log("e");
+
+// } else
+
+enum OrderStatus {
+  PENDING,
+  SHIPPED,
+  DELIVERED = 23,
+  RETURNED,
+}
+
+const status2 = OrderStatus.DELIVERED;
+
+function isDelivered(status: OrderStatus) {
+  return status === OrderStatus.DELIVERED;
+}
+
+isDelivered(status2);
