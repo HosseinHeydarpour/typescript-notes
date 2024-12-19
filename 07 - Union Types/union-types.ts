@@ -75,3 +75,20 @@ const stuff: (number | string)[] = ["sd", 2, 3];
 const stuff3: number | string[] = ["2"];
 
 const coords: (Point | Loc)[] = [];
+
+// ***********************************
+// * 004 Literal Types
+// ***********************************
+let zero: 0;
+// zero = 2; // has error only accepts zero as value
+let hi: "hi";
+// hi = "Hello";
+
+let mood: "Happy" | "Sad";
+mood = "Sad";
+// mood = "angrt";
+
+type DayOfWeek = "Monday" | "Teusday" | "Wednesday" | "Thursday" | 3; // we can use mixed value types too
+
+let curDay: DayOfWeek = "Monday";
+// let curDay: DayOfWeek = "weds"; This has error
