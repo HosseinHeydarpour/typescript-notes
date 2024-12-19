@@ -56,3 +56,32 @@ function isDelivered(status: OrderStatus) {
 }
 
 isDelivered(status2);
+
+// ******************************
+// * 006 A Bit More On Enums!
+// ******************************
+
+// if we just start with a number like below others will be 11,12,13,14
+// enum OrderStatus2 {
+//   PENDING = 10,
+//   SHIPPED
+//   DELIVERED
+//   RETURNED
+// }
+
+enum OrderStatus2 {
+  PENDING = 10,
+  SHIPPED = 32,
+  DELIVERED = 324,
+  RETURNED = 23,
+}
+
+enum ArrorKeys {
+  UP = "UP",
+  DOWN = "DOWN",
+  LEFT = "LEFT",
+  RIGHT = "RIGHT",
+  error = 22,
+}
+
+// if(move === ArrorKeys.LEFT)
