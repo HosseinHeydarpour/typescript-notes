@@ -85,3 +85,23 @@ enum ArrorKeys {
 }
 
 // if(move === ArrorKeys.LEFT)
+enum OrderStatus {
+  PENDING,
+  SHIPPED,
+  DEVLIVERED,
+  RETURNED,
+}
+
+// better way for enum in order to not to clutter the JS code
+const enum OerderStatusAlternative {
+  PENDING,
+  SHIPPED,
+  DEVLIVERED,
+  RETURNED,
+}
+
+const order = {
+  orderNumber: 20000,
+  status: OrderStatus.PENDING,
+  status2: OerderStatusAlternative.DEVLIVERED,
+};
