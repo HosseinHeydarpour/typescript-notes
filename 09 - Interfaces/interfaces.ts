@@ -79,3 +79,45 @@ const shoes: Product = {
 };
 
 console.log(shoes.applyDiscount(0.4));
+
+/******************************* */
+// * 006 Reopening Interfaces
+/****************************** */
+interface Dog {
+  name: string;
+  age: number;
+}
+
+// this is not overwriting the above dog interface it is extending it and it is something unique for interfaces
+interface Dog {
+  breed: string;
+  bark(): string;
+}
+
+const elton: Dog = {
+  name: "Dog Elton",
+  age: 2,
+  breed: "test",
+  bark() {
+    return "hoo";
+  },
+};
+
+/******************************* */
+// * 007 Extending Interfaces
+/****************************** */
+//  Here the service dog automatically inherits name,age,breed and bark method
+//  We can extend from multiples interfaces
+interface ServiceDog extends Dog {
+  job: "drug sniffer" | "bomb sniffer" | "guide dog";
+}
+
+const chewy: ServiceDog = {
+  name: "Chewy",
+  age: 4.5,
+  breed: "Lab",
+  job: "drug sniffer",
+  bark() {
+    return "boooo";
+  },
+};
