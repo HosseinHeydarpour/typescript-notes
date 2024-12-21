@@ -59,3 +59,23 @@ const ali: IranianPerson = {
     return "Hello";
   },
 };
+
+/******************************* */
+// * 004 Interface Method Parameters
+/****************************** */
+interface Product {
+  name: string;
+  price: number;
+  applyDiscount(discount: number): number;
+}
+
+const shoes: Product = {
+  name: "Blue Nike Shoes",
+  price: 200,
+  applyDiscount(amount: number) {
+    const newPrice = this.price * (1 - amount);
+    return newPrice;
+  },
+};
+
+console.log(shoes.applyDiscount(0.4));
