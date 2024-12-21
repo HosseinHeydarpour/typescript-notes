@@ -147,3 +147,21 @@ const pierre: Engineer = {
   level: "Senior",
   languages: ["Python", "JS"],
 };
+
+/**************************************** */
+// * 009 Interfaces Vs. Type Aliases
+/**************************************** */
+
+type Color = "red" | "blue";
+
+//  we cannot useinterfaces to define literals like this
+// interface Car = 'ferrai' | 'Lambo';
+
+type Chicken = {
+  breed: string;
+};
+
+//  we cannot reopen it
+// type Chicken = {
+//   numEggs: number;
+// };
