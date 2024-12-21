@@ -22,7 +22,7 @@ const p2t: Point2 = {
 };
 
 /******************************* */
-// * 001 Introducing Interfaces
+// * 002 Readonly and Optional Interface Properties
 /****************************** */
 interface Person {
   readonly id: number;
@@ -39,3 +39,23 @@ const thomas: Person = {
 
 thomas.first = "Thomas2";
 // thomas.id = 2233; This has error because we can only set readonly property when defining the object
+
+/******************************* */
+// * 001 Introducing Interfaces
+/****************************** */
+interface IranianPerson {
+  nationaCode: number;
+  name: string;
+  lastName: string;
+  // sayHi: () => string;
+  sayHi(): string; // The same thing as above
+}
+
+const ali: IranianPerson = {
+  nationaCode: 2,
+  name: "Ali",
+  lastName: "Moradi",
+  sayHi: () => {
+    return "Hello";
+  },
+};
