@@ -24,20 +24,20 @@ const p2t: Point2 = {
 /******************************* */
 // * 002 Readonly and Optional Interface Properties
 /****************************** */
-interface Person {
-  readonly id: number;
-  first: string;
-  last: string;
-  nickname?: string;
-}
+// interface Person {
+//   readonly id: number;
+//   first: string;
+//   last: string;
+//   nickname?: string;
+// }
 
-const thomas: Person = {
-  id: 222,
-  first: "Thomas",
-  last: "Hardy",
-};
+// const thomas: Person = {
+//   id: 222,
+//   first: "Thomas",
+//   last: "Hardy",
+// };
 
-thomas.first = "Thomas2";
+// thomas.first = "Thomas2";
 // thomas.id = 2233; This has error because we can only set readonly property when defining the object
 
 /******************************* */
@@ -120,4 +120,30 @@ const chewy: ServiceDog = {
   bark() {
     return "boooo";
   },
+};
+
+/**************************************** */
+// * 008 Interface Multiple Inheritance
+/**************************************** */
+
+interface Person {
+  name: string;
+}
+
+interface Employee {
+  readonly id: number;
+  email: string;
+}
+
+interface Engineer extends Person, Employee {
+  level: string;
+  languages: string[];
+}
+
+const pierre: Engineer = {
+  name: "Pierre",
+  id: 23323,
+  email: "piereed@g.com",
+  level: "Senior",
+  languages: ["Python", "JS"],
 };
