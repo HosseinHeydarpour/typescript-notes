@@ -6,8 +6,15 @@ interface Chicked {
 }
 
 const norma: Chicked = {
-  breed: "Silkiee",
+  breed: "Silkieee",
   eggsPerWeek: 2,
   name: "Norma",
   age: 2,
+};
+
+const juniper: Chicked = {
+  breed: "Silkie",
+  eggsPerWeek: 5,
+  name: "Juniper",
+  age: 1,
 };
