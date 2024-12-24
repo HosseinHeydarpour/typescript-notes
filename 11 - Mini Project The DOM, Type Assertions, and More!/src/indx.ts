@@ -4,3 +4,9 @@ function printDoble(msg: string) {
 }
 
 printDoble("Hello World!");
+
+// document.bgColor = 21;
+
+// document.getElementById(23)
+const btn = document.getElementById("btn");
+console.log(btn);
