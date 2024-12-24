@@ -10,3 +10,5 @@ printDoble("Hello World!");
 // document.getElementById(23)
 const btn = document.getElementById("btn");
 console.log(btn);
+
+"Hello".replaceAll("l", "~");
