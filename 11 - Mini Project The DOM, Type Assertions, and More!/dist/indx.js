@@ -1,11 +1,8 @@
 "use strict";
-function printDoble(msg) {
-    console.log(msg);
-    console.log(msg);
-}
-printDoble("Hello World!");
-// document.bgColor = 21;
-// document.getElementById(23)
-const btn = document.getElementById("btn");
-console.log(btn);
-"Hello".replaceAll("l", "~");
+const btn = document.getElementById("btn"); // This is risky
+// btn?.addEventListener("click", (e) => {
+//   alert("Clicked");
+// });
+btn.addEventListener("click", (e) => {
+    alert("Clicked");
+});

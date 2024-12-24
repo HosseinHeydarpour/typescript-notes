@@ -1,14 +1,8 @@
-function printDoble(msg: string) {
-  console.log(msg);
-  console.log(msg);
-}
+const btn = document.getElementById("btn")!; // This is risky
 
-printDoble("Hello World!");
-
-// document.bgColor = 21;
-
-// document.getElementById(23)
-const btn = document.getElementById("btn");
-console.log(btn);
-
-"Hello".replaceAll("l", "~");
+// btn?.addEventListener("click", (e) => {
+//   alert("Clicked");
+// });
+btn.addEventListener("click", (e) => {
+  alert("Clicked");
+});
