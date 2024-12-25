@@ -1,8 +1,10 @@
 const btn = document.getElementById("btn")!; // This is risky
-const input: HTMLInputElement = document.getElementById("todoinput")!;
+// const input = document.getElementById("todoinput")! as HTMLInputElement;
+const input = document.getElementById("todoinput")! as HTMLInputElement;
 
-btn?.addEventListener("click", (e) => {
-  input.value;
+btn.addEventListener("click", (e) => {
+  alert(input.value);
+  input.value = "";
 });
 
 // btn?.addEventListener("click", (e) => {
