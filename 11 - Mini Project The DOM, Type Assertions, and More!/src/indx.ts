@@ -4,9 +4,18 @@ const input = document.getElementById("todoinput")! as HTMLInputElement;
 
 const form = document.querySelector("form")!; // here because we are selecting HTLM elemnt type from ts know the type
 
+const list = document.querySelector("ul") as HTMLUListElement;
+
 const handleSubmit = (e: SubmitEvent) => {
   e.preventDefault();
-  console.log("SUBMITTED");
+  const newTodo = input.value;
+  const newLI = document.createElement("li");
+  newLI.append(newTodo);
+  list?.append(newLI);
+  const checkBox = document.createElement("input");
+  checkBox.type = "checkbox";
+  newLI.append(checkBox);
+  input.value = "";
 };
 
 form.addEventListener("submit", handleSubmit);
