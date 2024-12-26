@@ -6,12 +6,21 @@ const form = document.querySelector("form")!; // here because we are selecting H
 
 const list = document.querySelector("ul") as HTMLUListElement;
 
+function readTodos(): Todo[] {
+  const todosJSON = localStorage.getItem("todos");
+  if (todosJSON === null) return [];
+
+  return JSON.parse(todosJSON);
+}
+
 interface Todo {
   text: string;
   completed: boolean;
 }
 
-const todos: Todo[] = [];
+const todos: Todo[] = readTodos();
+
+todos.forEach(createTodo);
 
 const handleSubmit = (e: SubmitEvent) => {
   e.preventDefault();
@@ -20,20 +29,23 @@ const handleSubmit = (e: SubmitEvent) => {
     completed: false,
   };
 
-  todos.push(newTodo);
   createTodo(newTodo);
+  todos.push(newTodo);
+
+  localStorage.setItem("todos", JSON.stringify(todos));
 
   input.value = "";
 };
 
 function createTodo(todo: Todo) {
-  const newTodoText = todo.text;
   const newLI = document.createElement("li");
-  newLI.append(newTodoText);
-  list?.append(newLI);
+
   const checkBox = document.createElement("input");
   checkBox.type = "checkbox";
+
+  newLI.append(todo.text);
   newLI.append(checkBox);
+  list?.append(newLI);
 }
 
 form.addEventListener("submit", handleSubmit);

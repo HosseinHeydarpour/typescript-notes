@@ -4,25 +4,32 @@ const btn = document.getElementById("btn"); // This is risky
 const input = document.getElementById("todoinput");
 const form = document.querySelector("form"); // here because we are selecting HTLM elemnt type from ts know the type
 const list = document.querySelector("ul");
-const todos = [];
+function readTodos() {
+    const todosJSON = localStorage.getItem("todos");
+    if (todosJSON === null)
+        return [];
+    return JSON.parse(todosJSON);
+}
+const todos = readTodos();
+todos.forEach(createTodo);
 const handleSubmit = (e) => {
     e.preventDefault();
     const newTodo = {
         text: input.value,
         completed: false,
     };
-    todos.push(newTodo);
     createTodo(newTodo);
+    todos.push(newTodo);
+    localStorage.setItem("todos", JSON.stringify(todos));
     input.value = "";
 };
 function createTodo(todo) {
-    const newTodoText = todo.text;
     const newLI = document.createElement("li");
-    newLI.append(newTodoText);
-    list?.append(newLI);
     const checkBox = document.createElement("input");
     checkBox.type = "checkbox";
+    newLI.append(todo.text);
     newLI.append(checkBox);
+    list?.append(newLI);
 }
 form.addEventListener("submit", handleSubmit);
 // btn.addEventListener("click", (e) => {
