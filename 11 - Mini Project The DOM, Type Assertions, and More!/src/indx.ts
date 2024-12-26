@@ -22,6 +22,10 @@ const todos: Todo[] = readTodos();
 
 todos.forEach(createTodo);
 
+function saveTodos() {
+  localStorage.setItem("todos", JSON.stringify(todos));
+}
+
 const handleSubmit = (e: SubmitEvent) => {
   e.preventDefault();
   const newTodo: Todo = {
@@ -32,7 +36,7 @@ const handleSubmit = (e: SubmitEvent) => {
   createTodo(newTodo);
   todos.push(newTodo);
 
-  localStorage.setItem("todos", JSON.stringify(todos));
+  saveTodos();
 
   input.value = "";
 };
@@ -42,6 +46,11 @@ function createTodo(todo: Todo) {
 
   const checkBox = document.createElement("input");
   checkBox.type = "checkbox";
+  checkBox.checked = todo.completed;
+  checkBox.addEventListener("change", () => {
+    todo.completed = checkBox.checked;
+    saveTodos();
+  });
 
   newLI.append(todo.text);
   newLI.append(checkBox);

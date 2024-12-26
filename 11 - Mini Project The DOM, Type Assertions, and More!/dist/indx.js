@@ -12,6 +12,9 @@ function readTodos() {
 }
 const todos = readTodos();
 todos.forEach(createTodo);
+function saveTodos() {
+    localStorage.setItem("todos", JSON.stringify(todos));
+}
 const handleSubmit = (e) => {
     e.preventDefault();
     const newTodo = {
@@ -20,13 +23,18 @@ const handleSubmit = (e) => {
     };
     createTodo(newTodo);
     todos.push(newTodo);
-    localStorage.setItem("todos", JSON.stringify(todos));
+    saveTodos();
     input.value = "";
 };
 function createTodo(todo) {
     const newLI = document.createElement("li");
     const checkBox = document.createElement("input");
     checkBox.type = "checkbox";
+    checkBox.checked = todo.completed;
+    checkBox.addEventListener("change", () => {
+        todo.completed = checkBox.checked;
+        saveTodos();
+    });
     newLI.append(todo.text);
     newLI.append(checkBox);
     list?.append(newLI);
