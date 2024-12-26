@@ -6,17 +6,35 @@ const form = document.querySelector("form")!; // here because we are selecting H
 
 const list = document.querySelector("ul") as HTMLUListElement;
 
+interface Todo {
+  text: string;
+  completed: boolean;
+}
+
+const todos: Todo[] = [];
+
 const handleSubmit = (e: SubmitEvent) => {
   e.preventDefault();
-  const newTodo = input.value;
+  const newTodo: Todo = {
+    text: input.value,
+    completed: false,
+  };
+
+  todos.push(newTodo);
+  createTodo(newTodo);
+
+  input.value = "";
+};
+
+function createTodo(todo: Todo) {
+  const newTodoText = todo.text;
   const newLI = document.createElement("li");
-  newLI.append(newTodo);
+  newLI.append(newTodoText);
   list?.append(newLI);
   const checkBox = document.createElement("input");
   checkBox.type = "checkbox";
   newLI.append(checkBox);
-  input.value = "";
-};
+}
 
 form.addEventListener("submit", handleSubmit);
 
