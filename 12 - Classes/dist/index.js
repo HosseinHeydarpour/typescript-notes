@@ -1,7 +1,8 @@
 "use strict";
 
 class Player {
-  score = 0;
+  // _score = 0; // old convention
+  #score = 0; // old convention
   numLives = 10;
 
   constructor(first, last) {
@@ -9,6 +10,15 @@ class Player {
     this.last = last;
     // this.score = 0; old way
     // this.numLives = 10; old way
+    this.#secret();
+  }
+
+  getScore() {
+    return this.#score;
+  }
+
+  updateScore(newScore) {
+    this.#score = newScore;
   }
 
   taunt() {
@@ -17,6 +27,11 @@ class Player {
 
   loseLife() {
     this.numLives -= 1;
+  }
+
+  // Private method
+  #secret() {
+    console.log("Secret");
   }
 }
 
@@ -28,7 +43,12 @@ const player1 = new Player("Blue", "steele");
 console.log(player1.numLives);
 player1.loseLife();
 console.log(player1.numLives);
-
+// player1._score = -1000;
+// player1.#score = -1000; This will not be accessible outside player class
+console.log(player1);
+console.log(player1.getScore());
+player1.updateScore(222);
+console.log(player1.getScore());
 // const player2 = new Player("Red", "steele");
 // player2.taunt();
 // console.log(player2.first);
