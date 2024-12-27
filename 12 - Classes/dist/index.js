@@ -13,9 +13,13 @@ class Player {
     this.#secret();
   }
 
-  getScore() {
+  get score() {
     return this.#score;
   }
+
+  // getScore() {
+  //   return this.#score;
+  // }
 
   updateScore(newScore) {
     this.#score = newScore;
@@ -33,6 +37,10 @@ class Player {
   #secret() {
     console.log("Secret");
   }
+
+  get fullName() {
+    return `${this.first} ${this.last}`;
+  }
 }
 
 const player1 = new Player("Blue", "steele");
@@ -46,9 +54,16 @@ console.log(player1.numLives);
 // player1._score = -1000;
 // player1.#score = -1000; This will not be accessible outside player class
 console.log(player1);
-console.log(player1.getScore());
+// console.log(player1.getScore());
 player1.updateScore(222);
-console.log(player1.getScore());
+// console.log(player1.getScore());
+
+// We do not call the getter like a method with () we treat it like a property
+console.log(player1.fullName);
+console.log(player1.score);
+// player1.score = 2233; // this wont change anything and returns an error
+console.log(player1.score);
+
 // const player2 = new Player("Red", "steele");
 // player2.taunt();
 // console.log(player2.first);
