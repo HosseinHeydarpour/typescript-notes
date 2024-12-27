@@ -63,31 +63,10 @@ class Player {
 }
 
 const player1 = new Player("Blue", "steele");
-// player1.taunt();
-// console.log(player1.last);
-// console.log(player1);
 
-// console.log(player1.numLives);
-// player1.loseLife();
-// console.log(player1.numLives);
-// player1._score = -1000;
-// player1.#score = -1000; This will not be accessible outside player class
-// console.log(player1);
-// console.log(player1.getScore());
-// player1.updateScore(222);
-// console.log(player1.getScore());
+class AdminPlayer extends Player {
+  isAdmin = true;
+}
 
-// We do not call the getter like a method with () we treat it like a property
-// console.log(player1.fullName);
-// console.log(player1.score);
-// player1.score = -2233;
-// player1.score = 200;
-// console.log(player1.score);
-
-// const player2 = new Player("Red", "steele");
-// player2.taunt();
-// console.log(player2.first);
-
-console.log(player1.fullName);
-player1.fullName = "Hossein Heydarpour";
-console.log(player1.fullName);
+const admin = new AdminPlayer("Hossien", "Hey");
+admin.taunt();
