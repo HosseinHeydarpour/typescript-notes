@@ -1,6 +1,6 @@
 class Player {
-  first: string;
-  last: string;
+  readonly first: string;
+  readonly last: string;
   // score: number;
   score = 0;
 
@@ -14,3 +14,5 @@ class Player {
 const elton = new Player("Elton", "Steele");
 elton.score = 2;
 // elton.score = 'asca'; // This will have error
+
+// elton.first = "eltion"; // This will have error because  its i readnly
