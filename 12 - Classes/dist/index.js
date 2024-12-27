@@ -66,7 +66,13 @@ const player1 = new Player("Blue", "steele");
 
 class AdminPlayer extends Player {
   isAdmin = true;
+
+  constructor(first, last, powers) {
+    super(first, last);
+    this.powers = powers;
+  }
 }
 
-const admin = new AdminPlayer("Hossien", "Hey");
+// const admin = new AdminPlayer("Hossien", "Hey");
+const admin = new AdminPlayer("admin", "mcAdmin", ["Delete", "Restore World"]);
 admin.taunt();
