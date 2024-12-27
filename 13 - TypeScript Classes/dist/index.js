@@ -10,5 +10,6 @@ class Player {
 }
 const elton = new Player("Elton", "Steele");
 elton.score = 2;
+// elton.first = 'cvndskv';
 // elton.score = 'asca'; // This will have error
 // elton.first = "eltion"; // This will have error because  its i readnly

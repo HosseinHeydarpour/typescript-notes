@@ -1,8 +1,8 @@
 class Player {
-  readonly first: string;
-  readonly last: string;
+  public readonly first: string;
+  public readonly last: string;
   // score: number;
-  score = 0;
+  public score = 0;
 
   constructor(first: string, last: string) {
     this.first = first;
@@ -13,6 +13,7 @@ class Player {
 
 const elton = new Player("Elton", "Steele");
 elton.score = 2;
+// elton.first = 'cvndskv';
 // elton.score = 'asca'; // This will have error
 
 // elton.first = "eltion"; // This will have error because  its i readnly
