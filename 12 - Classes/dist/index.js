@@ -1,6 +1,8 @@
 "use strict";
 
 class Player {
+  static description = "Player In Our Game";
+
   // _score = 0; // old convention
   #score = 0; // old convention
   numLives = 10;
@@ -43,6 +45,10 @@ class Player {
   // Private method
   #secret() {
     console.log("Secret");
+  }
+
+  static randomPlayer() {
+    return new Player("Andy", "Samberg");
   }
 
   get fullName() {
