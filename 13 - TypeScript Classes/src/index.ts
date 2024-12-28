@@ -66,3 +66,25 @@ elton.score = 99;
 // elton.score = -99; this will throw an error but Type script wont intercept this error
 
 // elton.score = 'cm'; This will have error too but typescript can intercept this
+
+interface Colorful {
+  color: string;
+}
+
+interface Printable {
+  print(): void;
+}
+
+class Bike implements Colorful {
+  constructor(public color: string) {}
+}
+class Jacket implements Colorful, Printable {
+  constructor(public brand: string, public color: string) {}
+
+  print(): void {
+    console.log(`${this.color}, ${this.brand}`);
+  }
+}
+
+const jacket1 = new Jacket("Parada", "black");
+const bike1 = new Bike("red");

@@ -54,5 +54,19 @@ console.log(elton.fullName);
 // elton.fullName '0ada'; this will have error
 console.log(elton.score);
 elton.score = 99;
-// elton.score = -99; this will throw an error but Type script wont intercept this error
-// elton.score = 'cm'; This will have error too but typescript can intercept this
+class Bike {
+    constructor(color) {
+        this.color = color;
+    }
+}
+class Jacket {
+    constructor(brand, color) {
+        this.brand = brand;
+        this.color = color;
+    }
+    print() {
+        console.log(`${this.color}, ${this.brand}`);
+    }
+}
+const jacket1 = new Jacket("Parada", "black");
+const bike1 = new Bike("red");
