@@ -11,3 +11,21 @@ console.dir(inputEl);
 inputEl.value = "Hossein";
 const btn = document.querySelector(".btn");
 console.dir(btn);
+function numberIdentity(item) {
+    return item;
+}
+function stringIdentity(item) {
+    return item;
+}
+function booleanIdentity(item) {
+    return item;
+}
+function identity(item) {
+    return item;
+}
+// function identity<Type>(item: Type): Type {
+//   return item;
+// }
+// identity<string>
+identity(7);
+identity({ name: "blue", breed: "Shaneel" });
