@@ -76,9 +76,27 @@ let x = 23;
 //   };
 // }
 
-function merge<T, U>(obj1: T, obj2: U) {
+function merge<T extends object, U extends object>(obj1: T, obj2: U) {
   return { ...obj1, ...obj2 };
 }
 
 console.log(merge({ name: "colt" }, { pets: ["blue", "elton"] }));
 const comboObject = merge({ name: "colt" }, { pets: ["blue", "elton"] });
+// console.log(merge({ name: "hossein" }, 9)); this will have error now
+console.log(merge({ name: "hossein" }, { num: 9 }));
+
+interface Lengthy {
+  length: number;
+}
+
+// function printDoubleLength<T extends Lengthy>(thing: T): number {
+//   return thing.length * 2;
+// }
+
+// This works too!
+function printDoubleLength(thing: Lengthy): number {
+  return thing.length * 2;
+}
+
+printDoubleLength("ascdac"); // This wont have error because it has a length
+// printDoubleLength(234);

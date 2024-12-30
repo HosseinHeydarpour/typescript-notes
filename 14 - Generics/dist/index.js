@@ -53,3 +53,14 @@ function merge(obj1, obj2) {
 }
 console.log(merge({ name: "colt" }, { pets: ["blue", "elton"] }));
 const comboObject = merge({ name: "colt" }, { pets: ["blue", "elton"] });
+// console.log(merge({ name: "hossein" }, 9)); this will have error now
+console.log(merge({ name: "hossein" }, { num: 9 }));
+// function printDoubleLength<T extends Lengthy>(thing: T): number {
+//   return thing.length * 2;
+// }
+// This works too!
+function printDoubleLength(thing) {
+    return thing.length * 2;
+}
+printDoubleLength("ascdac"); // This wont have error because it has a length
+// printDoubleLength(234);
