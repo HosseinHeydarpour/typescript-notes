@@ -42,3 +42,14 @@ getRandomElement([1, 2, 3, 4]);
 // [true,false,true]
 // [{},{},{}]
 let x = 23;
+// function merge(obj1, obj2) {
+//   return {
+//     ...obj1,
+//     ...obj2,
+//   };
+// }
+function merge(obj1, obj2) {
+    return { ...obj1, ...obj2 };
+}
+console.log(merge({ name: "colt" }, { pets: ["blue", "elton"] }));
+const comboObject = merge({ name: "colt" }, { pets: ["blue", "elton"] });
