@@ -64,3 +64,10 @@ function printDoubleLength(thing) {
 }
 printDoubleLength("ascdac"); // This wont have error because it has a length
 // printDoubleLength(234);
+function makeEmptyList() {
+    return [];
+}
+const strings = makeEmptyList();
+strings.push("Hello");
+const strings2 = makeEmptyList(); // This will return an unknown array without specifing
+const bools = makeEmptyList();

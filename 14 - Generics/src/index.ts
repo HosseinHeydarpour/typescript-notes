@@ -100,3 +100,14 @@ function printDoubleLength(thing: Lengthy): number {
 
 printDoubleLength("ascdac"); // This wont have error because it has a length
 // printDoubleLength(234);
+
+function makeEmptyList<T = number>(): T[] {
+  return [];
+}
+
+const strings = makeEmptyList<string>();
+strings.push("Hello");
+
+const strings2 = makeEmptyList(); // This will return an unknown array without specifing
+
+const bools = makeEmptyList<boolean>();
