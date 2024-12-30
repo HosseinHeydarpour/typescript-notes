@@ -29,3 +29,12 @@ function identity(item) {
 // identity<string>
 identity(7);
 identity({ name: "blue", breed: "Shaneel" });
+function getRandomElement(list) {
+    const randomIndex = Math.floor(Math.random() * list.length);
+    return list[randomIndex];
+}
+console.log(getRandomElement([4, 5, 6, 7]));
+console.log(getRandomElement(["a", "b", "c"]));
+// [4,5,6,7]
+// [true,false,true]
+// [{},{},{}]

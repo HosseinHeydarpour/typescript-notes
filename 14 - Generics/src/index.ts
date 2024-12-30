@@ -50,3 +50,15 @@ function identity<T>(item: T): T {
 identity<number>(7);
 
 identity<Cat>({ name: "blue", breed: "Shaneel" });
+
+function getRandomElement<T>(list: T[]): T {
+  const randomIndex = Math.floor(Math.random() * list.length);
+  return list[randomIndex];
+}
+
+console.log(getRandomElement<number>([4, 5, 6, 7]));
+console.log(getRandomElement<string>(["a", "b", "c"]));
+
+// [4,5,6,7]
+// [true,false,true]
+// [{},{},{}]
