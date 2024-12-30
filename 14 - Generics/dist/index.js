@@ -35,6 +35,10 @@ function getRandomElement(list) {
 }
 console.log(getRandomElement([4, 5, 6, 7]));
 console.log(getRandomElement(["a", "b", "c"]));
+// getRandomElement<string>(["a", "c", "as"]);
+getRandomElement(["a", "c", "as"]);
+getRandomElement([1, 2, 3, 4]);
 // [4,5,6,7]
 // [true,false,true]
 // [{},{},{}]
+let x = 23;
