@@ -111,3 +111,38 @@ strings.push("Hello");
 const strings2 = makeEmptyList(); // This will return an unknown array without specifing
 
 const bools = makeEmptyList<boolean>();
+
+interface Song {
+  titile: string;
+  artist: string;
+}
+
+interface Video {
+  title: string;
+  creator: string;
+  resolution: string;
+}
+
+// class VideoPlaylist {
+//   public videos: Video[] = [];
+// }
+
+// class SongPlaylist {
+//   public songs: Song[] = [];
+// }
+
+// Instead we create a generic playlist
+
+class Playlist<T> {
+  public queue: T[] = [];
+
+  add(el: T) {
+    this.queue.push(el);
+  }
+}
+
+const songs = new Playlist<Song>();
+// songs.add()
+
+const videos = new Playlist<Video>();
+// videos.add()

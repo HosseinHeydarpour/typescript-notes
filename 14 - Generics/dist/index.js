@@ -71,3 +71,22 @@ const strings = makeEmptyList();
 strings.push("Hello");
 const strings2 = makeEmptyList(); // This will return an unknown array without specifing
 const bools = makeEmptyList();
+// class VideoPlaylist {
+//   public videos: Video[] = [];
+// }
+// class SongPlaylist {
+//   public songs: Song[] = [];
+// }
+// Instead we create a generic playlist
+class Playlist {
+    constructor() {
+        this.queue = [];
+    }
+    add(el) {
+        this.queue.push(el);
+    }
+}
+const songs = new Playlist();
+// songs.add()
+const videos = new Playlist();
+// videos.add()
