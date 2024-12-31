@@ -24,3 +24,14 @@ const printLetters = (word: string | null) => {
     console.log("YOU DID NOT PASS IN A WORD");
   }
 };
+
+function someDemo(x: string | number, y: string | boolean) {
+  if (x === y) {
+    // Both x and y going to be string because the only situation where x and why can be strictly equal is where both are string
+    x;
+    y;
+    x.toLocaleUpperCase();
+  }
+}
+
+someDemo(3, "3");
