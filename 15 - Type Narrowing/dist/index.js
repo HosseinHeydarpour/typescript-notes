@@ -50,3 +50,30 @@ console.log(getRunTime({
     episodeDuration: 80,
     duration: 30,
 }));
+function printFullDate(date) {
+    if (date instanceof Date) {
+        // return date.toUTCString();
+        console.log(date.toUTCString());
+    }
+    else {
+        console.log(new Date(date).toUTCString());
+    }
+}
+class User {
+    constructor(name) {
+        this.name = name;
+    }
+}
+class Company {
+    constructor(name) {
+        this.name = name;
+    }
+}
+function printName(entity) {
+    if (entity instanceof User) {
+        entity;
+    }
+    else {
+        entity;
+    }
+}
