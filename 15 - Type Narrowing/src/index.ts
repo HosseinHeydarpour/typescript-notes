@@ -35,3 +35,37 @@ function someDemo(x: string | number, y: string | boolean) {
 }
 
 someDemo(3, "3");
+
+interface Movie {
+  title: string;
+  duration: number;
+}
+
+interface TVShow {
+  titile: string;
+  numEPS: number;
+  episodeDuration: number;
+}
+
+function getRunTime(media: Movie | TVShow) {
+  if ("numEPS" in media) {
+    return media.numEPS * media.episodeDuration;
+  }
+  // Because we returned in the if here TS know for sure that media is a Movie
+  return media.duration;
+}
+
+console.log(
+  getRunTime({
+    title: "Amadeus",
+    duration: 160,
+  })
+);
+
+console.log(
+  getRunTime({
+    title: "Sponge Bob",
+    episodeDuration: 80,
+    duration: 30,
+  })
+);

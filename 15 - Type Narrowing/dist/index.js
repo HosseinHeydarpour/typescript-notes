@@ -34,3 +34,19 @@ function someDemo(x, y) {
     }
 }
 someDemo(3, "3");
+function getRunTime(media) {
+    if ("numEPS" in media) {
+        return media.numEPS * media.episodeDuration;
+    }
+    // Because we returned in the if here TS know for sure that media is a Movie
+    return media.duration;
+}
+console.log(getRunTime({
+    title: "Amadeus",
+    duration: 160,
+}));
+console.log(getRunTime({
+    title: "Sponge Bob",
+    episodeDuration: 80,
+    duration: 30,
+}));
