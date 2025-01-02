@@ -95,6 +95,14 @@ function getFarmAnimalSound(animal) {
             return "Mooo!";
         case "rooster":
             return "Cockadooooodeldoo!";
+        case "sheep":
+            return "Baaa";
+        default:
+            // We should never make it here if we handlea all cases correctly
+            // const shouldNeverGetHere: never = animal;
+            // return shouldNeverGetHere;
+            const _exhaustiveCheck = animal;
+            return _exhaustiveCheck;
     }
 }
 const stevie = {
