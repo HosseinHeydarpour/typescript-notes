@@ -87,3 +87,20 @@ function makeNoise(animal) {
     animal;
     return "Woof";
 }
+function getFarmAnimalSound(animal) {
+    switch (animal.KIND) {
+        case "pig":
+            return "Oink!";
+        case "cow":
+            return "Mooo!";
+        case "rooster":
+            return "Cockadooooodeldoo!";
+    }
+}
+const stevie = {
+    name: "Stevie Chicks",
+    weight: 2,
+    age: 1.5,
+    KIND: "rooster",
+};
+console.log(getFarmAnimalSound(stevie));

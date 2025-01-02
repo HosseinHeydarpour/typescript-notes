@@ -116,3 +116,46 @@ function makeNoise(animal: Cat | Dog): string {
   animal;
   return "Woof";
 }
+
+interface Rooster {
+  name: string;
+  weight: number;
+  age: number;
+  KIND: "rooster";
+}
+
+interface Cow {
+  name: string;
+  weight: number;
+  age: number;
+  KIND: "cow";
+}
+
+interface Pig {
+  name: string;
+  weight: string;
+  age: number;
+  KIND: "pig";
+}
+
+type FarmAnimal = Pig | Rooster | Cow;
+
+function getFarmAnimalSound(animal: FarmAnimal) {
+  switch (animal.KIND) {
+    case "pig":
+      return "Oink!";
+    case "cow":
+      return "Mooo!";
+    case "rooster":
+      return "Cockadooooodeldoo!";
+  }
+}
+
+const stevie: Rooster = {
+  name: "Stevie Chicks",
+  weight: 2,
+  age: 1.5,
+  KIND: "rooster",
+};
+
+console.log(getFarmAnimalSound(stevie));
