@@ -8,3 +8,5 @@ export function sample<T>(arr: T[]): T {
 }
 
 const x = 1;
+
+export const PI = 3.14;
