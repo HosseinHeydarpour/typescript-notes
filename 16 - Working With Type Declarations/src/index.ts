@@ -1,4 +1,9 @@
 import axios from "axios";
+import _ from "lodash";
+
+// _.shuffle();
+_.sample([122, 123, 143, 123]);
+
 interface User {
   id: number;
   name: string;
