@@ -1,6 +1,8 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const utils_1 = require("./utils");
+//  Using allias for an exported thing
+import { add, sample as sampleFunc } from "./utils.js";
+import { PI } from "./utils.js";
+const sample = 123;
 console.log("Hello World");
-console.log((0, utils_1.sample)([1, 2, 3]));
-console.log((0, utils_1.add)(3, 2));
+console.log(PI);
+console.log(sampleFunc([1, 2, 3]));
+console.log(add(3, 2));
